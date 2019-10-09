@@ -23,7 +23,7 @@ const Navigation = props => {
   const [attach, set] = useState(true)
   const sticky = e => {
     const win = typeof window !== "undefined" ? window : null
-    if (win.scrollY <= 65) {
+    if (win.scrollY >= 70) {
       set(false)
     }
     if(win.scrollY<=0){
@@ -52,7 +52,7 @@ const Navigation = props => {
           alignItems: "center",
           paddingLeft: "2em",
           paddingRight: "2em",
-          marginTop:attach?"4em":"0em",
+          marginTop:attach?"4em":"0",
           ...stick,
         }}
       >

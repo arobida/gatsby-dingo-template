@@ -30,6 +30,7 @@ const IndexPage = (props) => {
   return (
     <Layout location={props.location}>
       <SEO title="Home" />
+      <div style={{marginTop:"-9.3em"}}>
       <StyledBgImage>
         <animated.h1 style={stroked}>Hello World</animated.h1>
         <div style={{ width: "200px", margin: "auto" }}>
@@ -37,6 +38,7 @@ const IndexPage = (props) => {
         </div>
         <div style={{ height: "150px", marginBottom: "1em" }} />
       </StyledBgImage>
+      </div>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
     </Layout>
