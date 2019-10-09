@@ -22,7 +22,8 @@ const Navigation = props => {
   `)
   const [attach,set] = useState(true)
   const sticky = e => {
-    const navTop = window.scrollY<=75
+    const win = typeof window!=="undefined"?window:null
+    const navTop = win.scrollY<=75
     set(navTop)
     console.log(attach)
   }
