@@ -86,8 +86,8 @@ const Form = ({ onSubmit, name, email, message }) => {
         }}
       />
       <Button
-        fontSize={1}
-        borderRadius=".3em"
+        size={1}
+        radius=".3em"
         color={theme.light.orange}
         onClick={onSubmit}
       >

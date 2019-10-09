@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { useGesture } from "react-with-gesture"
+import { animated, useSpring, config } from "react-spring"
 import { theme } from "./styles/theme"
+import useListener from "../hooks/useListener"
 import logo from "../images/gatsby-icon.png"
-import Social from "./social"
+import Modal from "./modal"
 
-const Navigation = () => {
+const Navigation = props => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -19,19 +20,31 @@ const Navigation = () => {
       }
     }
   `)
-  const bind = useGesture(values => console.log(values))
+  const [attach,set] = useState(true)
+  const sticky = e => {
+    const navTop = window.scrollY<=75
+    set(navTop)
+    console.log(attach)
+  }
+  useListener("scroll", sticky)
+
+  const stick = useSpring({
+    position: attach ? "relative" : "fixed",
+    background: attach ? theme.primaryLight : theme.primaryDark,
+    config:config.slow
+  })
   return (
-    <nav
+    <animated.nav
       style={{
-        position: "fixed",
         zIndex: "50",
         width: "100%",
+        height: "5em",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        background: theme.primaryDark,
         paddingLeft: "2em",
         paddingRight: "2em",
+        ...stick,
       }}
     >
       <Link to="/">
@@ -51,10 +64,10 @@ const Navigation = () => {
               <Link
                 to={item.link}
                 style={{
-                  color: theme.primaryLight,
+                  color: `${attach?theme.primaryDark:theme.primaryLight}`,
                   textTransform: "uppercase",
                   textDecoration: "none",
-                  fontWeight:'bold'
+                  fontWeight: "bold",
                 }}
                 activeStyle={{ color: theme.dark.orange }}
               >
@@ -64,8 +77,11 @@ const Navigation = () => {
           )
         })}
       </ul>
-      <Social color={theme.primaryLight} />
-    </nav>
+      <Modal>
+        <h1>Book Your Next Event</h1>
+        <p>With Davis Family Catering</p>
+      </Modal>
+    </animated.nav>
   )
 }
 
