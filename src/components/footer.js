@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import logo from "../images/gatsby-icon.png"
 import { theme } from "./styles/theme"
 
-const Footer = () => {
+const Footer = (props) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -24,15 +24,15 @@ const Footer = () => {
       <div
         style={{
           width: "100%",
-          height: "15em",
+          height: `${props.mobile?"35em":"15em"}`,
           color: theme.primaryDark,
           display: "flex",
-          flexDirection: "row",
+          flexDirection: `${props.mobile?"column":"row"}`,
           justifyContent: "space-around",
-          alignItems: "flex-start",
+          alignItems: `${props.mobile?"center":"flex-start"}`,
         }}
       >
-        <div style={{ width: "15em" }}>
+        <div style={{ width: "35%" }}>
           <h3>About Us</h3>
           <p>
             Heaven fruitful doesn't over for these theheaven fruitful doe over
@@ -40,7 +40,7 @@ const Footer = () => {
             bearing be one blessed after.
           </p>
         </div>
-        <div style={{ width: "15em" }}>
+        <div style={{ width: "30%" }}>
           <h3>Links</h3>
           <ul style={{ listStyle: "none" }}>
             {data.site.siteMetadata.navLinks.map(item => {
@@ -61,7 +61,7 @@ const Footer = () => {
             })}
           </ul>
         </div>
-        <div style={{ width: "15em" }}>
+        <div style={{ width: "30%" }}>
           <h3>Contact Us</h3>
           <ul style={{ listStyle: "none" }}>
             <li>Location:</li>

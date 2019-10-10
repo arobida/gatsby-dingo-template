@@ -47,6 +47,7 @@ const Layout = ({ children, location }) => {
                   style={{
                     marginTop: `${mobile ? 0 : 3}em`,
                     textAlign: "center",
+                    minHeight: "100vh",
                     flex: "1",
                     ...props,
                   }}
@@ -56,7 +57,7 @@ const Layout = ({ children, location }) => {
               )
             )
           })}
-          <Footer />
+          <Footer mobile={mobile} />
         </div>
       </>
     </ThemeProvider>
