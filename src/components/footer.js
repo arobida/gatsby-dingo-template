@@ -10,8 +10,8 @@ const Footer = () => {
       site {
         siteMetadata {
           title
-          navLinks{
-            name,
+          navLinks {
+            name
             link
           }
         }
@@ -20,46 +20,58 @@ const Footer = () => {
   `)
 
   return (
-    <footer>
+    <footer style={{ background: "rgb(215, 204, 200,.6)" }}>
       <div
         style={{
           width: "100%",
-          background: theme.primaryDark,
-          color: theme.primaryLight,
+          height: "15em",
+          color: theme.primaryDark,
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-around",
+          alignItems: "flex-start",
         }}
       >
-        <div style={{ textAlign: "center", paddingTop: "1em" }}>
-          <p>Join Our Mailing List:</p>
-          <input
-            style={{ height: "3em", borderRadius: ".6em" }}
-            type="text"
-            placeholder="Your Email"
-          />
+        <div style={{ width: "15em" }}>
+          <h3>About Us</h3>
+          <p>
+            Heaven fruitful doesn't over for these theheaven fruitful doe over
+            days appear creeping seasons sad behold beari ath of it fly signs
+            bearing be one blessed after.
+          </p>
         </div>
-        <ul
-          style={{
-            display: "flex",
-            flexDirection: `row`,
-            justifyContent: "center",
-            listStyle: "none",
-          }}
-        >
-          {data.site.siteMetadata.navLinks.map(item => {
-            return (
-              <li key={item.name} style={{ padding: ".3em" }}>
-                <Link
-                  to={item.link}
-                  style={{ color: theme.primaryLight }}
-                  activeStyle={{ color: theme.dark.orange }}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
+        <div style={{ width: "15em" }}>
+          <h3>Links</h3>
+          <ul style={{ listStyle: "none" }}>
+            {data.site.siteMetadata.navLinks.map(item => {
+              return (
+                <li key={item.name} style={{ paddingTop: ".3em" }}>
+                  <Link
+                    to={item.link}
+                    style={{
+                      color: theme.primaryDark,
+                      textTransform: "capitalize",
+                    }}
+                    activeStyle={{ color: theme.dark.orange }}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+        <div style={{ width: "15em" }}>
+          <h3>Contact Us</h3>
+          <ul style={{ listStyle: "none" }}>
+            <li>Location:</li>
+            <li>Phone:</li>
+            <li>Email:</li>
+          </ul>
+        </div>
       </div>
-      <p style={{ paddingBottom: "" }}>
+      <hr />
+      <p>
         <img
           src={logo}
           alt="logo"

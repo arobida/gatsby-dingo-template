@@ -5,7 +5,7 @@ console.log()
 module.exports = {
   siteMetadata: {
     siteUrl: `https://blankgst.netlify.com/`,
-    title: `Gatsby Site`,
+    title: `Davis Family Catering`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `Andrew Robida`,
     navLinks: [
