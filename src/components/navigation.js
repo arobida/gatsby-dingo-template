@@ -26,7 +26,7 @@ const Navigation = props => {
     if (win.scrollY >= 70) {
       set(false)
     }
-    if(win.scrollY<=0){
+    if (win.scrollY <= 0) {
       set(true)
     }
 
@@ -35,9 +35,10 @@ const Navigation = props => {
   useListener("scroll", sticky)
 
   const stick = useSpring({
-    position: attach?"absolute":"fixed",
+    position: attach ? "absolute" : "fixed",
     background: attach ? "rgb(255, 255, 255,0)" : theme.primaryLight,
-    transform: attach ?  `translate3d(0,-80%,0)`:`translate3d(0,0%,0)`,
+    boxShadow: attach?"0 0px 0px rgba(0,0,0,0)":"0 5px 15px rgba(0, 0, 0, 0.5)",
+    transform: attach ? `translate3d(0,-100%,0)` : `translate3d(0,0%,0)`,
     config: config.slow,
   })
   return (
@@ -52,7 +53,7 @@ const Navigation = props => {
           alignItems: "center",
           paddingLeft: "2em",
           paddingRight: "2em",
-          marginTop:attach?"4em":"0",
+          marginTop: attach ? "4em" : "0",
           ...stick,
         }}
       >

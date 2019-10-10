@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import useInput from "../hooks/useInput"
 import useMedia from "../hooks/useMedia"
-
+import StyledBgImage from "../components/bgImage"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { theme } from "../components/styles/theme"
@@ -52,11 +52,25 @@ const Contact = props => {
     email.clear()
     message.clear()
   }
-  console.log("props:",props)
+  console.log("props:", props)
   return (
     <Layout location={props.location}>
       <SEO title="Contact" />
-      <h1>Contact Us</h1>
+      <StyledBgImage>
+      <div style={{ display: "flex", height: "200px" }}>
+          <h1
+            style={{
+              color: theme.primaryLight,
+              width: "200px",
+              height: "20px",
+              margin: "auto",
+              fontWeight: "800",
+            }}
+          >
+            Contact Us
+          </h1>
+        </div>
+      </StyledBgImage>
       {!toggle ? (
         <Form onSubmit={onSubmit} name={name} email={email} message={message} />
       ) : (

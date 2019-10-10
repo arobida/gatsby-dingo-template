@@ -14,10 +14,10 @@ import BackgroundImage from "gatsby-background-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const BgImage = ({ children, className }) => {
+const CornerImg = ({ children, className }) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "chicken-taco.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "carne-asada-taco.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
@@ -38,12 +38,13 @@ const BgImage = ({ children, className }) => {
     </BackgroundImage>
   )
 }
-const StyledBgImage = styled(BgImage)`
+const StyledCornerImg = styled(CornerImg)`
   width: 100%;
-  filter: grayscale(20%);
+  ${'' /* filter: grayscale(20%);
   background-position: center;
   background-repeat: repeat-y;
-  background-size: cover;
+  background-size: cover; */}
+  transform: translate3d(0, 0, 0) rotateX(30deg);
 `
 
-export default StyledBgImage
+export default StyledCornerImg
