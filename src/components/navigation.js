@@ -29,8 +29,6 @@ const Navigation = props => {
     if (win.scrollY <= 0) {
       set(true)
     }
-
-    console.log(attach)
   }
   useListener("scroll", sticky)
 

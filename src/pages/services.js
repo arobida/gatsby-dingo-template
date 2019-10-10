@@ -14,8 +14,9 @@ const Services = props => {
           <h1
             style={{
               color: theme.primaryLight,
-              width: "200px",
-              height: "25px",
+              width: "350px",
+              height: "75px",
+              fontSize: "3em",
               margin: "auto",
               fontWeight: "800",
             }}

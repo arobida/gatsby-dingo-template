@@ -52,7 +52,6 @@ const Contact = props => {
     email.clear()
     message.clear()
   }
-  console.log("props:", props)
   return (
     <Layout location={props.location}>
       <SEO title="Contact" />
@@ -61,8 +60,9 @@ const Contact = props => {
           <h1
             style={{
               color: theme.primaryLight,
-              width: "200px",
-              height: "25px",
+              width: "350px",
+              height: "75px",
+              fontSize: "3em",
               margin: "auto",
               fontWeight: "800",
             }}
