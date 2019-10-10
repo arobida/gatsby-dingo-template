@@ -40,7 +40,6 @@ const BgImage = ({ children, className }) => {
 }
 const StyledBgImage = styled(BgImage)`
   width: 100%;
-  filter: contrast(60%);
 `
 
 export default StyledBgImage

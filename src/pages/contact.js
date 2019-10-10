@@ -56,7 +56,7 @@ const Contact = props => {
     <Layout location={props.location}>
       <SEO title="Contact" />
       <StyledBgImage>
-      <div style={{ display: "flex", height: "200px" }}>
+        <div style={{ display: "flex", height: "200px" }}>
           <h1
             style={{
               color: theme.primaryLight,
@@ -65,6 +65,7 @@ const Contact = props => {
               fontSize: "3em",
               margin: "auto",
               fontWeight: "800",
+              WebkitTextStroke: `3px ${theme.dark.orange}`,
             }}
           >
             Contact Us

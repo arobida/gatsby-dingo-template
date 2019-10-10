@@ -20,6 +20,7 @@ const About = props => {
               fontSize: "3em",
               margin: "auto",
               fontWeight: "800",
+              WebkitTextStroke: `3px ${theme.dark.orange}`,
             }}
           >
             About Us
