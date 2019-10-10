@@ -62,7 +62,7 @@ const Contact = props => {
             style={{
               color: theme.primaryLight,
               width: "200px",
-              height: "20px",
+              height: "25px",
               margin: "auto",
               fontWeight: "800",
             }}

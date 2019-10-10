@@ -13,15 +13,18 @@ const IndexPage = props => {
   return (
     <Layout location={props.location}>
       <SEO title="Home" />
-      <div style={{
-        position:'absolute',
-        zIndex:'-40',
-        top:'0',
-        right:'0',
-        background:'radial-gradient(circle at top right, rgb(255, 255, 255,0.3) 30%,#FAF9FC 65%)',
-        width:'21em',
-        height:'21em'
-      }}></div>
+      <div
+        style={{
+          position: "absolute",
+          zIndex: "-40",
+          top: "0",
+          right: "0",
+          background:
+            "radial-gradient(circle at top right, rgb(255, 255, 255,0.3) 30%,#FAF9FC 65%)",
+          width: "21em",
+          height: "21em",
+        }}
+      ></div>
       <div
         style={{
           position: "absolute",
@@ -32,7 +35,15 @@ const IndexPage = props => {
       >
         <CornerImg style={{ width: "20em", height: "20em" }} />
       </div>
-      <h1>Davis Family Catering</h1>
+      <h1
+        style={{
+          background: "-webkit-linear-gradient(#000,#D55913)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
+        Davis Family Catering
+      </h1>
       <p>Delivering taste from our family to yours!</p>
     </Layout>
   )
