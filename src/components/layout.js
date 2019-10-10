@@ -38,13 +38,18 @@ const Layout = ({ children, location }) => {
           }}
         >
           <GlobalStyles />
-          {mobile?<MobileMenu/>: <Navigation/>}
+          {mobile ? <MobileMenu /> : <Navigation />}
           {transitions.map(({ item, key, props }) => {
             return (
               item && (
                 <animated.main
                   key={key}
-                  style={{ marginTop:`${mobile?0:3}em`,textAlign: "center", flex: "1", ...props }}
+                  style={{
+                    marginTop: `${mobile ? 0 : 3}em`,
+                    textAlign: "center",
+                    flex: "1",
+                    ...props,
+                  }}
                 >
                   {children}
                 </animated.main>

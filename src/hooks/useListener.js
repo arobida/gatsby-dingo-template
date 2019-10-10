@@ -1,37 +1,38 @@
-import {useRef, useEffect} from "react"
-const win = typeof window!=="undefined"?window:null
-function useListener(eventName, handler, element = win){
-	// Create a ref that stores handler
-	const savedHandler = useRef();
+import { useRef, useEffect } from "react"
 
-	// Update ref.current value if handler changes.
-	// This allows our effect below to always get latest handler ...
-	// ... without us needing to pass it in effect deps array ...
-	// ... and potentially cause effect to re-run every render.
-	useEffect(() => {
-	  savedHandler.current = handler;
-	}, [handler]);
+const win = typeof window !== "undefined" ? window : null
+function useListener(eventName, handler, element = win) {
+  // Create a ref that stores handler
+  const savedHandler = useRef()
 
-	useEffect(
-	  () => {
-		// Make sure element supports addEventListener
-		// On
-		const isSupported = element && element.addEventListener;
-		if (!isSupported) return;
+  // Update ref.current value if handler changes.
+  // This allows our effect below to always get latest handler ...
+  // ... without us needing to pass it in effect deps array ...
+  // ... and potentially cause effect to re-run every render.
+  useEffect(() => {
+    savedHandler.current = handler
+  }, [handler])
 
-		// Create event listener that calls handler function stored in ref
-		const eventListener = event => savedHandler.current(event);
+  useEffect(
+    () => {
+      // Make sure element supports addEventListener
+      // On
+      const isSupported = element && element.addEventListener
+      if (!isSupported) return
 
-		// Add event listener
-		element.addEventListener(eventName, eventListener);
+      // Create event listener that calls handler function stored in ref
+      const eventListener = event => savedHandler.current(event)
 
-		// Remove event listener on cleanup
-		return () => {
-		  element.removeEventListener(eventName, eventListener);
-		};
-	  },
-	  [eventName, element] // Re-run if eventName or element changes
-	);
-  };
+      // Add event listener
+      element.addEventListener(eventName, eventListener)
 
-  export default useListener
+      // Remove event listener on cleanup
+      return () => {
+        element.removeEventListener(eventName, eventListener)
+      }
+    },
+    [eventName, element] // Re-run if eventName or element changes
+  )
+}
+
+export default useListener

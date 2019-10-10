@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+
 const useObserver = (target, root) => {
   const [isIntersecting, setIntersecting] = useState(false)
 
