@@ -60,7 +60,7 @@ const ModalWrapper = ({children,hey}) => {
       <Button
         color={theme.light.orange}
         size="2em"
-        radius="2em"
+        radius="1.7em"
         onClick={() => toggle(!on)}
       >
         Book Now

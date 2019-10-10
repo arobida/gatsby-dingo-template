@@ -4,6 +4,7 @@ import StyledBgImage from "../components/bgImage"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { theme } from "../components/styles/theme"
+import Image from "../components/image"
 
 const About = props => {
   return (

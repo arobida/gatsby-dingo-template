@@ -40,10 +40,7 @@ const BgImage = ({ children, className }) => {
 }
 const StyledBgImage = styled(BgImage)`
   width: 100%;
-  filter: grayscale(20%);
-  background-position: center;
-  background-repeat: repeat-y;
-  background-size: cover;
+  filter: contrast(60%);
 `
 
 export default StyledBgImage

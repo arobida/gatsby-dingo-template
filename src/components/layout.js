@@ -21,8 +21,6 @@ import MobileMenu from "./mobileMenu"
 
 const Layout = ({ children, location }) => {
   const mobile = useMedia(theme.smQuery)
-  console.log("location:", location)
-  console.log("children:", children)
   const transitions = useTransition(location, location => location.key, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -42,7 +40,6 @@ const Layout = ({ children, location }) => {
           <GlobalStyles />
           {mobile?<MobileMenu/>: <Navigation/>}
           {transitions.map(({ item, key, props }) => {
-            console.log("item:", item)
             return (
               item && (
                 <animated.main

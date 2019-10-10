@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 const Image = (props) => {
+  console.log({Img})
   const data = useStaticQuery(graphql`
     query {
       images: allFile {
@@ -26,7 +27,7 @@ const image = data.images.edges.find(n => {
   });
   if (!image) { return null; }
   const imageData = image.node.childImageSharp.fluid
-  return <Img fluid={imageData} alt={props.alt}/>
+  return <Img fluid={imageData} alt={props.alt} style={{...props.style}} />
 }
 
 export default Image

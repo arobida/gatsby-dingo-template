@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 
 /*
@@ -14,12 +13,12 @@ import BackgroundImage from "gatsby-background-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const CornerImg = ({ children, className }) => {
+const CornerImg = ({ className,style }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "carne-asada-taco.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000) {
+          fluid(maxWidth:600) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -33,18 +32,10 @@ const CornerImg = ({ children, className }) => {
       className={className}
       fluid={imageData}
       backgroundColor={`#040e18`}
-    >
-      {children}
-    </BackgroundImage>
+	  style={{...style}}
+    />
   )
 }
-const StyledCornerImg = styled(CornerImg)`
-  width: 100%;
-  ${'' /* filter: grayscale(20%);
-  background-position: center;
-  background-repeat: repeat-y;
-  background-size: cover; */}
-  transform: translate3d(0, 0, 0) rotateX(30deg);
-`
 
-export default StyledCornerImg
+
+export default CornerImg
