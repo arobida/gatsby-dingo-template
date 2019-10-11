@@ -7,7 +7,7 @@ import logo from "../images/gatsby-icon.png"
 import Modal from "./modal"
 import Links from "./links"
 import Burger from "./burger"
-import Accordion from "./Accordion"
+import Accordion from "./accordion"
 
 const Navigation = props => {
   const data = useStaticQuery(graphql`
