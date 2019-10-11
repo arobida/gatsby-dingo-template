@@ -2,8 +2,8 @@ import styled from "styled-components"
 
 export const StyledBurger = styled.button`
   position: fixed;
-  top: 1%;
-  right: 2rem;
+  top: 25%;
+  right: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -23,7 +23,7 @@ export const StyledBurger = styled.button`
     width: 2rem;
     height: 0.25rem;
     background: ${({ theme, toggle }) =>
-      toggle ? theme.primaryLight : theme.primaryDark};
+      toggle ? theme.light.red : theme.primaryDark};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;

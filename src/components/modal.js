@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { animated, useTransition } from "react-spring"
 import {MdClear} from "react-icons/md"
-import { theme } from "./styles/theme"
+import { theme } from "./styled/theme"
 import Button from "./button"
 
 const StyledModal = styled(animated.div)`
@@ -59,8 +59,8 @@ const ModalWrapper = ({children,hey}) => {
       )}
       <Button
         color={theme.light.orange}
-        size="2em"
-        radius="1.7em"
+        size="1em"
+        radius=".5em"
         onClick={() => toggle(!on)}
       >
         Book Now

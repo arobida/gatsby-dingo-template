@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { theme } from "../components/styles/theme"
+import { theme } from "../components/styled/theme"
 import StyledBgImage from "../components/bgImage"
 import Layout from "../components/layout"
 import SEO from "../components/seo"

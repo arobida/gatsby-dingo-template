@@ -1,5 +1,5 @@
 import React from "react"
-import StyledButton from "./styles/styledButton"
+import StyledButton from "./styled/styledButton"
 
 const Button = ({ children,size, color, shadow, radius,onClick }) => {
   return (

@@ -5,7 +5,7 @@ import useMedia from "../hooks/useMedia"
 import StyledBgImage from "../components/bgImage"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { theme } from "../components/styles/theme"
+import { theme } from "../components/styled/theme"
 import Form from "../components/form"
 import Sent from "../components/sent"
 // for netlify forms

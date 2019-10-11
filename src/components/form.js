@@ -1,5 +1,5 @@
 import React from "react"
-import { theme } from "../components/styles/theme"
+import { theme } from "./styled/theme"
 import Button from "../components/button"
 
 const Form = ({ onSubmit, name, email, message }) => {

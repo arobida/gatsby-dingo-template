@@ -10,8 +10,8 @@ import PropTypes from "prop-types"
 import { useTransition, animated, config } from "react-spring"
 // Global Styles & Theme
 import { ThemeProvider } from "styled-components"
-import { GlobalStyles } from "../components/styles/global"
-import { theme } from "../components/styles/theme"
+import { GlobalStyles } from "./styled/global"
+import { theme } from "./styled/theme"
 // Hooks
 import useMedia from "../hooks/useMedia"
 // Components
@@ -38,14 +38,13 @@ const Layout = ({ children, location }) => {
           }}
         >
           <GlobalStyles />
-          {mobile ? <MobileMenu /> : <Navigation />}
+          <Navigation mobile={mobile}/>
           {transitions.map(({ item, key, props }) => {
             return (
               item && (
                 <animated.main
                   key={key}
                   style={{
-                    marginTop: `${mobile ? 0 : 3}em`,
                     textAlign: "center",
                     minHeight: "100vh",
                     flex: "1",

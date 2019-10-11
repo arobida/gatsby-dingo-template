@@ -1,6 +1,6 @@
 import React from "react"
 import { FaInstagram, FaEnvelope, FaFacebook } from "react-icons/fa"
-import { theme } from "./styles/theme"
+import { theme } from "./styled/theme"
 
 const Social = ({size,color}) => {
   return (

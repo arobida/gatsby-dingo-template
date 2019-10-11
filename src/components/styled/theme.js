@@ -1,7 +1,7 @@
 // theme.js
 export const theme = {
-  mobile: "500px",
-  smQuery:"(max-width:500px)",
+  mobile: "570px",
+  smQuery:"(max-width:570px)",
   mdQuery:"(max-width:650px)",
   lgQuery:"(max-width:1000px)",
   "primaryDark":"#0A0216",

@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import logo from "../images/gatsby-icon.png"
-import { theme } from "./styles/theme"
+import { theme } from "./styled/theme"
 
 const Footer = props => {
   const data = useStaticQuery(graphql`
@@ -29,10 +29,10 @@ const Footer = props => {
           display: "flex",
           flexDirection: `${props.mobile ? "column" : "row"}`,
           justifyContent: "space-around",
-          alignItems: `${props.mobile ? "center" : "flex-start"}`,
+          alignItems: "flex-start",
         }}
       >
-        <ul style={{ listStyle: "none", width: "40%" }}>
+        <ul style={{ listStyle: "none",width:`${props.mobile?"":"30%"}` }}>
           <h3>About Us</h3>
           <li>
             Heaven fruitful doesn't over for these theheaven fruitful doe over
@@ -40,7 +40,7 @@ const Footer = props => {
             bearing be one blessed after.
           </li>
         </ul>
-        <ul style={{ listStyle: "none", width: "25%" }}>
+        <ul style={{ listStyle: "none", }}>
           <h3>Links</h3>
           {data.site.siteMetadata.navLinks.map(item => {
             return (
@@ -59,7 +59,7 @@ const Footer = props => {
             )
           })}
         </ul>
-        <ul style={{ listStyle: "none", width: "25%" }}>
+        <ul style={{ listStyle: "none", }}>
           <h3>Contact Us</h3>
           <li>Location:</li>
           <li>Phone:</li>
