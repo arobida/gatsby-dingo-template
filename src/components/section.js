@@ -5,7 +5,7 @@ const Section = props => {
   return <StyledSection>{props.children}</StyledSection>
 }
 const StyledSection = styled.section`
-  max-width: 80vw;
+  max-width: 90vw;
   @media (max-width: 570px) {
     min-height: 100vh;
     max-width: 100vw;

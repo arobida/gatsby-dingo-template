@@ -8,6 +8,8 @@ import SEO from "../components/seo"
 import { theme } from "../components/styled/theme"
 import Form from "../components/form"
 import Sent from "../components/sent"
+import Section from "../components/section"
+
 // for netlify forms
 const encode = data => {
   return Object.keys(data)
@@ -56,7 +58,7 @@ const Contact = props => {
     <Layout location={props.location}>
       <SEO title="Contact" />
       <StyledBgImage>
-        <div style={{ display: "flex", height: "200px" }}>
+        <div style={{ display: "flex", height: "200px", textAlign: "center" }}>
           <h1
             style={{
               color: theme.primaryLight,
@@ -72,11 +74,18 @@ const Contact = props => {
           </h1>
         </div>
       </StyledBgImage>
-      {!toggle ? (
-        <Form onSubmit={onSubmit} name={name} email={email} message={message} />
-      ) : (
-        <Sent name={name} email={email} reset={reset} />
-      )}
+      <Section>
+        {!toggle ? (
+          <Form
+            onSubmit={onSubmit}
+            name={name}
+            email={email}
+            message={message}
+          />
+        ) : (
+          <Sent name={name} email={email} reset={reset} />
+        )}
+      </Section>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )

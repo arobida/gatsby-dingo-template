@@ -36,12 +36,12 @@ const IndexPage = props => {
         >
           <CornerImg style={{ width: "20em", height: "20em" }} />
         </div>
-        <h2 style={{ color: theme.light.orange }}>
+        <h2 style={{ color: theme.dark.orange }}>
           <em>Delicious Home Cooked Meals</em>
         </h2>
         <h1
           style={{
-            background: "-webkit-linear-gradient(#000,#D55913)",
+            background: `-webkit-linear-gradient(#000,${theme.dark.orange})`,
             fontSize: "2.3em",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
@@ -52,22 +52,23 @@ const IndexPage = props => {
         <p>Delivering taste from our family to yours!</p>
       </Section>
       <Section>
+      <h1>Popular Dishes</h1>
         <Card>
-        {food.menu.map(item => {
-          return (
-            <div key={item.title} className="cards">
-              <Image
-                filename={item.image}
-                style={{ width: "100%", borderRadius: ".7em .7em 0 0" }}
-              />
-              <h3>{item.title}</h3>
-              <p style={{ textAlign: "left", margin: ".5em" }}>
-                {item.description}
-              </p>
-            </div>
-          )
-        })}
-      </Card>
+          {food.menu.map(item => {
+            return (
+              <div key={item.title} className="cards">
+                <Image
+                  filename={item.image}
+                  style={{ width: "100%", borderRadius: ".7em .7em 0 0" }}
+                />
+                <h3>{item.title}</h3>
+                <p style={{ textAlign: "left", margin: ".5em" }}>
+                  {item.description}
+                </p>
+              </div>
+            )
+          })}
+        </Card>
       </Section>
     </Layout>
   )

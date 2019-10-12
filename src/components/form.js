@@ -88,7 +88,7 @@ const Form = ({ onSubmit, name, email, message }) => {
       <Button
         size={1}
         radius=".3em"
-        color={theme.light.orange}
+        color={theme.dark.orange}
         onClick={onSubmit}
       >
         Send

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { animated, useTransition } from "react-spring"
-import {MdClear} from "react-icons/md"
+import { MdClear } from "react-icons/md"
 import { theme } from "./styled/theme"
 import Button from "./button"
 
@@ -22,23 +22,28 @@ const StyledCard = styled(animated.div)`
   padding: 20px;
   max-width: 400px;
   width: 100%;
-  text-align:center;
+  text-align: center;
 `
-const Modal = ({ closeModal, animation, pointerEvents,children }) => {
+const Modal = ({ closeModal, animation, pointerEvents, children }) => {
   return (
     <StyledModal style={{ pointerEvents }}>
       <StyledCard style={animation}>
-	  <MdClear onClick={closeModal} color="red" size="1.5em" style={{position:'absolute',top:'10%',right:'7%'}}/>
+        <MdClear
+          onClick={closeModal}
+          color="red"
+          size="1.5em"
+          style={{ position: "absolute", top: "10%", right: "7%" }}
+        />
         {children}
       </StyledCard>
     </StyledModal>
   )
 }
 
-const ModalWrapper = ({children,hey}) => {
+const ModalWrapper = ({ children, hey }) => {
   const [on, toggle] = useState(false)
   const transition = useTransition(on, null, {
-    from: { opacity: 0, transform: "translate3d(0, -40px, 0)"},
+    from: { opacity: 0, transform: "translate3d(0, -40px, 0)" },
     enter: { opacity: 1, transform: "translate3d(0, 0, 0)" },
     leave: { opacity: 0, transform: "translate3d(0, -40px, 0)" },
   })
@@ -53,12 +58,12 @@ const ModalWrapper = ({children,hey}) => {
               pointerEvents={pointerEvents}
               animation={animation}
               closeModal={() => toggle(false)}
-			  children={children}
+              children={children}
             />
           )
       )}
       <Button
-        color={theme.light.orange}
+        color={theme.dark.orange}
         size="1em"
         radius=".5em"
         onClick={() => toggle(!on)}

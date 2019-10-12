@@ -40,6 +40,8 @@ const BgImage = ({ children, className }) => {
 }
 const StyledBgImage = styled(BgImage)`
   width: 100%;
+  background-position: center;
+  background-size: cover;
 `
 
 export default StyledBgImage
