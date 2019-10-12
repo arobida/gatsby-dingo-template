@@ -25,7 +25,7 @@ const Navigation = props => {
   `)
   const [attach, set] = useState(true)
   const [toggle, setToggle] = useState(false)
-  const sticky = e => {
+  const sticky = () => {
     const win = typeof window !== "undefined" ? window : null
     if (win.scrollY >= 70) {
       set(false)
@@ -45,7 +45,6 @@ const Navigation = props => {
     transform: attach ? `translate3d(0,-100%,0)` : `translate3d(0,0%,0)`,
     config: config.slow,
   })
-  const slide = useSpring({})
   return (
     <>
       <animated.nav

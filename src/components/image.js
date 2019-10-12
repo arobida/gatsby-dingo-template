@@ -4,7 +4,6 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 const Image = props => {
-  console.log({ Img })
   const data = useStaticQuery(graphql`
     query {
       images: allFile {

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import { object, bool } from "prop-types"
 import { theme } from "./styled/theme"
 
 const links = ({ data, mobile }) => {
@@ -39,6 +39,9 @@ const links = ({ data, mobile }) => {
   )
 }
 
-links.propTypes = {}
+links.propTypes = {
+  data: object.isRequired,
+  mobile: bool,
+}
 
 export default links
