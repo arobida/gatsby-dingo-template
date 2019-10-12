@@ -38,7 +38,7 @@ const Navigation = props => {
 
   const stick = useSpring({
     position: attach ? "absolute" : "fixed",
-    background: attach ? "rgb(255, 255, 255,0)" : theme.primaryLight,
+    background: attach && !toggle? "rgb(255, 255, 255,0)" : theme.primaryLight,
     boxShadow: attach
       ? "0 0px 0px rgba(0,0,0,0)"
       : "0 5px 15px rgba(0, 0, 0, 0.5)",
