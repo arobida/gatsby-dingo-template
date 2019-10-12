@@ -45,7 +45,6 @@ const Layout = ({ children, location }) => {
                 <animated.main
                   key={key}
                   style={{
-                    textAlign: "center",
                     minHeight: "100vh",
                     flex: "1",
                     ...props,
