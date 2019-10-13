@@ -1,6 +1,6 @@
 import React from "react"
 import { theme } from "./styled/theme"
-import Button from "../components/button"
+import Button from "./ghostBtn"
 
 const Form = ({ onSubmit, name, email, message }) => {
   return (
@@ -87,7 +87,7 @@ const Form = ({ onSubmit, name, email, message }) => {
       />
       <Button
         size={1}
-        radius=".3em"
+        radius={.3}
         color={theme.dark.orange}
         onClick={onSubmit}
       >

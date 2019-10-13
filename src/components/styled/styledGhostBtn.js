@@ -2,15 +2,15 @@ import styled from "styled-components"
 import { theme } from "./theme"
 
 const StyledButton = styled.button`
-    --borderWidth: 5;
+    --borderWidth: ${({ border }) => border?border:5};
     --boxShadowDepth: ${({ shadow }) => shadow?shadow:4};
     --buttonColor: ${({ color }) => color?color:theme.primaryDark};
     --fontSize: ${({ size }) => size?size:3};
-    --horizontalPadding: 16;
-    --verticalPadding: 8;
+    --horizontalPadding: ${({ paddingX }) => paddingX?paddingX:16};
+    --verticalPadding: ${({ paddingY }) => paddingY?paddingY:8};
     background: transparent;
     border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
-    border-radius:${({ radius }) => radius?radius:0};
+    border-radius:${({ radius }) => radius?radius:0}em;
     box-shadow: calc(var(--boxShadowDepth) * 1px)
       calc(var(--boxShadowDepth) * 1px) 0 #BDBDBD;
     color: var(--buttonColor);
@@ -70,7 +70,7 @@ const StyledButton = styled.button`
     -webkit-clip-path: var(--clip);
     background: var(--buttonColor);
     border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
-    border-radius:${({ radius }) => radius?radius:0};
+    border-radius:${({ radius }) => radius?radius:0}em;
     bottom: calc(var(--borderWidth) * -1px);
     clip-path: var(--clip);
     color: var(--bg, #fafafa);

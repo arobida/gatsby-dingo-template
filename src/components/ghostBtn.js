@@ -1,9 +1,28 @@
 import React from "react"
-import StyledButton from "./styled/styledButton"
+import StyledButton from "./styled/styledGhostBtn"
 
-const Button = ({ children,size, color, shadow, radius,onClick }) => {
+const Button = ({
+  children,
+  size,
+  color,
+  shadow,
+  radius,
+  onClick,
+  paddingX,
+  paddingY,
+  border,
+}) => {
   return (
-    <StyledButton size={size} color={color} shadow={shadow} radius={radius} onClick={onClick}>
+    <StyledButton
+      size={size}
+      color={color}
+      shadow={shadow}
+      radius={radius}
+      onClick={onClick}
+      paddingX={paddingX}
+      paddingY={paddingY}
+      border={border}
+    >
       {children}
       <span className="spans"></span>
       <span className="spans"></span>
