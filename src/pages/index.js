@@ -8,6 +8,7 @@ import Card from "../components/card"
 import { food } from "../data/food"
 import { theme } from "../components/styled/theme"
 import Section from "../components/section"
+import LinkBtn from "../components/styled/styledLinkBtn"
 
 const IndexPage = props => {
   return (
@@ -50,15 +51,18 @@ const IndexPage = props => {
           Davis Family Catering
         </h1>
         <p>Delivering taste from our family to yours!</p>
+        <LinkBtn>Reserve Event</LinkBtn>
       </Section>
       <Section>
-      <h1>Popular Dishes</h1>
+        <h1>Popular Dishes</h1>
         <Card>
           {food.menu.map(item => {
             return (
               <div key={item.title} className="cards">
                 <Image
                   filename={item.image}
+                  width={300}
+                  height={300}
                   style={{ width: "100%", borderRadius: ".7em .7em 0 0" }}
                 />
                 <h3>{item.title}</h3>

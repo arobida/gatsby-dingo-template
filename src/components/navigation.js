@@ -38,7 +38,7 @@ const Navigation = props => {
 
   const stick = useSpring({
     position: attach ? "absolute" : "fixed",
-    background: attach && !toggle? "rgb(255, 255, 255,0)" : theme.primaryLight,
+    background: attach && !toggle ? "rgb(255, 255, 255,0)" : theme.primaryLight,
     boxShadow: attach
       ? "0 0px 0px rgba(0,0,0,0)"
       : "0 5px 15px rgba(0, 0, 0, 0.5)",
@@ -68,18 +68,22 @@ const Navigation = props => {
             <img src={logo} alt="logo" style={{ width: "2em" }} />
           </Link>
           {!props.mobile && <Links data={data} />}
-          <Modal>
-            <h1>Book Your Next Event</h1>
-            <p>With Davis Family Catering</p>
-          </Modal>
-          {props.mobile && (
-            <div>
-              <Burger toggle={toggle} setToggle={setToggle} />
-            </div>
+          {!props.mobile && (
+            <Modal>
+              <h1>Book Your Next Event</h1>
+              <p>With Davis Family Catering</p>
+            </Modal>
           )}
+          {props.mobile && <Burger toggle={toggle} setToggle={setToggle} />}
         </div>
         <Accordion toggle={toggle}>
           <Links data={data} mobile={props.mobile} />
+          <div style={{ textAlign: "right" }}>
+            <Modal>
+              <h1>Book Your Next Event</h1>
+              <p>With Davis Family Catering</p>
+            </Modal>
+          </div>
         </Accordion>
       </animated.nav>
       <div style={{ paddingTop: `${attach ? 4 : -4}em` }}></div>
